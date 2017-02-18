@@ -1136,12 +1136,12 @@ Fasttracker.prototype.effect_t0_z=function(mod, ch) { // z
 Fasttracker.prototype.effect_t0_e0=function(mod, ch) { // e0 filter on/off
 }
 Fasttracker.prototype.effect_t0_e1=function(mod, ch) { // e1 fine slide up
-  mod.channel[ch].period-=mod.channel[ch].data&0x0f;
-  if (mod.channel[ch].period < 113) mod.channel[ch].period=113;
+  mod.channel[ch].voiceperiod-=mod.channel[ch].data&0x0f;
+  if (mod.channel[ch].voiceperiod < 113) mod.channel[ch].period=113;
 }
 Fasttracker.prototype.effect_t0_e2=function(mod, ch) { // e2 fine slide down
-  mod.channel[ch].period+=mod.channel[ch].data&0x0f;
-  if (mod.channel[ch].period > 856) mod.channel[ch].period=856;
+  mod.channel[ch].voiceperiod+=mod.channel[ch].data&0x0f;
+  if (mod.channel[ch].voiceperiod > 856) mod.channel[ch].period=856;
   mod.channel[ch].flags|=1;
 }
 Fasttracker.prototype.effect_t0_e3=function(mod, ch) { // e3 set glissando
